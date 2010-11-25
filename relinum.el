@@ -25,10 +25,10 @@
 ;; Display line numbers for the current buffer. Copy linum.el to your
 ;; load-path and add to your .emacs:
 
-;;    (require 'linum)
+;;    (require 'relinum)
 
-;; Then toggle display of line numbers with M-x linum-mode. To enable
-;; line numbering in all buffers, use M-x global-linum-mode.
+;; Then toggle display of line numbers with M-x relinum-mode. To enable
+;; line numbering in all buffers, use M-x global-relinum-mode.
 
 ;;; Code:
 
@@ -73,10 +73,10 @@ and you have to scroll or press C-l to update the numbers."
   :type 'boolean)
 
 ;;;###autoload
-(define-minor-mode linum-mode
+(define-minor-mode relinum-mode
   "Toggle display of line numbers in the left marginal area."
   :lighter ""                           ; for desktop.el
-  (if linum-mode
+  (if relinum-mode
       (progn
         (if linum-eager
             (add-hook 'post-command-hook (if linum-delay
@@ -100,11 +100,11 @@ and you have to scroll or press C-l to update the numbers."
     (linum-delete-overlays)))
 
 ;;;###autoload
-(define-globalized-minor-mode global-linum-mode linum-mode linum-on)
+(define-globalized-minor-mode global-relinum-mode relinum-mode relinum-on)
 
-(defun linum-on ()
+(defun relinum-on ()
   (unless (minibufferp)
-    (linum-mode 1)))
+    (relinum-mode 1)))
 
 (defun linum-delete-overlays ()
   "Delete all overlays displaying line numbers for this buffer."
@@ -120,7 +120,7 @@ and you have to scroll or press C-l to update the numbers."
 (defun linum-update (buffer)
   "Update line numbers for all windows displaying BUFFER."
   (with-current-buffer buffer
-    (when linum-mode
+    (when relinum-mode
       (setq linum-available linum-overlays)
       (setq linum-overlays nil)
       (save-excursion
