@@ -7,4 +7,4 @@ I wasn't able to find a package that provided relative line numbers and since I 
 Installation
 ------------
 
-To install, either clone this repository or download relinum.el, put it somewhere on your load path and add <code>(require 'relinum)</code> to your emacs config.
+To install, either clone this repository or download relinum.el, put it somewhere on your load path and add <code>(require 'relinum)</code> to your emacs config. You can load the mode via <code>M-x relinum-mode</code> or globally enable it via <code>(M-x global-relinum-mode)</code>.
