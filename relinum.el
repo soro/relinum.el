@@ -89,6 +89,7 @@ and you have to scroll or press C-l to update the numbers."
         (add-hook 'change-major-mode-hook 'linum-delete-overlays nil t)
         (add-hook 'window-configuration-change-hook
                   'linum-after-config nil t)
+        (setq default-truncate-lines t)
         (linum-update-current))
     (remove-hook 'post-command-hook 'linum-update-current t)
     (remove-hook 'post-command-hook 'linum-schedule t)
