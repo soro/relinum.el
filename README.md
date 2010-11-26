@@ -11,7 +11,7 @@ Issues
 Currently there is one problem that depending on your taste could be minor or really annoying. If line-wrapping is turned on and the same buffer is viewed in 2 windows at the same time, sometimes the point jumps to the middle of the screen and the screen stays fixed instead of scrolling. For this reason I have decided to automatically turn off line wrapping if the mode is loaded.
 
 If anyone has an idea why this happens or how to fix it, please send me a patch. 
-In the past I have encountered this problem when using <code>highlight-parentheses-mode</code>, so I don't think it is an issue with my code.
+In the past I have encountered this problem when using <code>highlight-parentheses-mode</code>. 
 
 Installation
 ------------
