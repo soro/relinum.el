@@ -115,6 +115,7 @@ and you have to scroll or press C-l to update the numbers."
 
 (defun linum-update-current ()
   "Update line numbers for the current buffer."
+  (setq point-pos (line-number-at-pos))
   (linum-update (current-buffer)))
 
 (defun linum-update (buffer)
@@ -131,7 +132,6 @@ and you have to scroll or press C-l to update the numbers."
 
 (defun linum-update-window (win)
   "Update line numbers for the portion visible in window WIN."
-  (setq point-pos (line-number-at-pos))
   (goto-char (window-start win))
   (let ((line (- (line-number-at-pos) point-pos))
         (limit (window-end win t))
